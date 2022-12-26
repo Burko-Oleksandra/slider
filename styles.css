@@ -1,54 +1,38 @@
-/* Ширина внешнего контейнера */
-.slidecontainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
+.range-wrap {
+  position: relative;
+  margin: 0 auto 3rem;
 }
-
-/* Сам слайдер */
 .slider {
-  -webkit-appearance: none; /* Переопределить стили CSS по умолчанию */
-  width: 400px; /* Полная ширина */
-  height: 3px; /* Указанная высота */
-  background: lightgray; /* Серый фон */
-  outline: none; /* Удалить/добавить контур */
-  opacity: 1; /* изначальная прозрачность */
-  -webkit-transition: 0.2s; /* 0,2 секунды перехода при наведении */
-  transition: opacity 0.2s;
-  border-radius: 16px; /* скругление по краям  */
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
 }
 
-/* Эффекты наведения мыши */
-/* .slider:hover {
-  opacity: 1; при наведении мыши становится прозрачным
-} */
-
-/* Дескриптор ползунка (используйте -webkit- (Chrome, Opera, Safari, Edge) и -moz- (Firefox), чтобы переопределить внешний вид по умолчанию) */
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Переопределить внешний вид по умолчанию */
-  appearance: none;
-  width: 15px; /* Устанавливаем конкретную ширину ручки ползунка */
-  height: 15px; /* Высота ручки ползунка */
-  background: white; /* Синий фон */
-  border: 2px solid #006cfa;
-  cursor: pointer; /* Курсор при наведении */
-  border-radius: 50%; /* Сам ползунок */
+.slider::slider-thumb {
+  color: yellow;
+  background-color: yellow;
 }
 
-.slider::-webkit-slider-thumb:hover {
-  background: lightgray;
+.bubble {
+  background: blue;
+  color: white;
+  padding: 4px 12px;
+  position: absolute;
+  border-radius: 8px;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bubble::after {
+  content: '';
+  position: absolute;
+  border: 3px solid transparent;
+  border-top: 5px solid blue;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.slider::-moz-range-thumb {
-  width: 25px; /* Устанавливаем конкретную ширину ручки ползунка */
-  height: 25px; /* Высота ручки ползунка */
-  background: lightgray; /* Серый фон */
-  cursor: pointer; /* Курсор при наведении */
-}
-
-.slider::-moz-range-thumb {
-  background: lightgray;
+body {
+  padding: 40px;
 }
