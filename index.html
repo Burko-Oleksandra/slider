@@ -10,9 +10,32 @@
   <body>
     <div class="slidecontainer">
       <!-- можно установить минимальное, максимальное значение и изначальное -->
-      <input type="range" min="1" max="100" value="50" id="myRange" class="slider" />
+      <label>Ваша инвестиция</label>
+      <input type="range" min="0" max="1000000" value="10000" id="myRange" class="slider" />
+
+      <p>Стоимость: <span id="demo"></span></p>
     </div>
-    <p>Value: <span id="demo"></span></p>
     <script src="./slider.js" type="module"></script>
+    <fieldset>
+      <legend>Передвиньте ползунок</legend>
+      <p>
+        <input
+          type="range"
+          min="0"
+          max="1000000"
+          value="0"
+          onchange="document.getElementById('rangeValue').innerHTML = this.value;"
+          list="rangeList"
+        />
+        <span id="rangeValue">0</span>
+      </p>
+      <datalist id="rangeList">
+        <option value="12000" label="12000"></option>
+        <option value="259000" label="259000"></option>
+        <option value="506000" label="506000"></option>
+        <option value="753000" label="753000"></option>
+        <option value="1000000" label="1000000"></option>
+      </datalist>
+    </fieldset>
   </body>
 </html>

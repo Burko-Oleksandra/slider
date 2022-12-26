@@ -1,13 +1,18 @@
 /* Ширина внешнего контейнера */
 .slidecontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   width: 100%;
 }
 
 /* Сам слайдер */
 .slider {
   -webkit-appearance: none; /* Переопределить стили CSS по умолчанию */
-  width: 200px; /* Полная ширина */
-  height: 10px; /* Указанная высота */
+  width: 400px; /* Полная ширина */
+  height: 3px; /* Указанная высота */
   background: lightgray; /* Серый фон */
   outline: none; /* Удалить/добавить контур */
   opacity: 1; /* изначальная прозрачность */
@@ -17,9 +22,9 @@
 }
 
 /* Эффекты наведения мыши */
-.slider:hover {
-  opacity: 0.7; /* при наведении мыши становится прозрачным */
-}
+/* .slider:hover {
+  opacity: 1; при наведении мыши становится прозрачным
+} */
 
 /* Дескриптор ползунка (используйте -webkit- (Chrome, Opera, Safari, Edge) и -moz- (Firefox), чтобы переопределить внешний вид по умолчанию) */
 .slider::-webkit-slider-thumb {
@@ -27,9 +32,14 @@
   appearance: none;
   width: 15px; /* Устанавливаем конкретную ширину ручки ползунка */
   height: 15px; /* Высота ручки ползунка */
-  background: blue; /* Зеленый фон */
+  background: white; /* Синий фон */
+  border: 2px solid #006cfa;
   cursor: pointer; /* Курсор при наведении */
   border-radius: 50%; /* Сам ползунок */
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: lightgray;
 }
 
 .slider::-moz-range-thumb {
@@ -37,4 +47,8 @@
   height: 25px; /* Высота ручки ползунка */
   background: lightgray; /* Серый фон */
   cursor: pointer; /* Курсор при наведении */
+}
+
+.slider::-moz-range-thumb {
+  background: lightgray;
 }
